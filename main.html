@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<meta charset="UTF-8">
-    <meta name="description" content="Plantilla">
-    <meta name="keywords" content="HTML,CSS,PHP,SQL,Palntilla">
-    <meta name="author" content="Costas Carles">
- </head>
-<body>
-	<nav></nav>
-	<header><h1>Plantilla Titulo</h1></header>
-	
-	<section>
-		<form action="main.php">
- 	 		User name:<br>
- 	 		<input class="campo" type="text" name="firstname" value="User">
-  			<br>
-  			Password:<br>
-  			<input class="campo" type="Password" name="lastname" value="Password">
-  			<br><br>
-  			<input type="submit" value="Submit">
-		</form> 
-	</section>
-	
-	<footer></footer>
-</body>
+   <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <link rel="stylesheet" type="script" href="main.js">
+      <meta charset="UTF-8">
+      <meta name="description" content="Plantilla">
+      <meta name="keywords" content="HTML,CSS,PHP,SQL,Palntilla">
+      <meta name="author" content="Costas Carles">
+   </head>
+   <body>
+      <nav></nav>
+      <header>
+         <h1>Plantilla Titulo</h1>
+      </header>
+      <section>
+         <div class="form-style-5">
+            <form id="loginform">
+               <fieldset>
+                  <legend><span class="number">1</span> Login Details</legend>
+                  <input type="text" name="field1" placeholder="User Name ">
+                  <input type="Password" name="field2" placeholder="Password">
+                  <select name="action" onchange="quitSignIn()">
+                     <optgroup label="Action">
+                        <option value="in">Sign In</option>
+                        <option value="up">Sign Up</option>
+                     </optgroup>
+                  </select>
+               </fieldset>
+               <input type="submit" value="Submit" autofocus="true">
+            </form>
+            <form id="signupform" style="display: none;">
+               <fieldset>
+                  <legend><span class="number">1</span> Signup Details</legend>
+                  <input class="campo" type="text" name="username" placeholder="User">
+                  <input class="campo" type="Password" name="password" placeholder="Password">
+                  <input class="campo" type="Password" name="repassword" placeholder="RePassword">
+                  <input class="campo" type="text" name="email" placeholder="Email">
+                  <input class="campo" type="text" name="fistname" placeholder="Name">
+                  <input class="campo" type="text" name="lastname" placeholder="Surname">
+                  <select name="action" onchange="quitSignUp()">
+                     <optgroup label="Action">
+                        <option value="in">Sign In</option>
+                        <option value="up" selected>Sign Up</option>
+                     </optgroup>
+                  </select>
+                  <div id="terms"><input class="campo" type="checkbox" > I Agree <a href="https://www.linkeng.com/en/terms-conditions" target="blank">Terms & Coditions</a></div>
+               </fieldset>
+               <input type="submit" value="Submit" autofocus="true">
+            </form>
+         </div>
+      </section>
+      <script>
+         function quitSignIn(){
+         
+         	var lform = document.forms["loginform"]
+         	var sform = document.forms["signupform"]
+         
+         	lform.style.display="none";
+         	sform.style.display="block";
+         }
+         
+         function quitSignUp(){
+         
+         	var lform = document.forms["loginform"]
+         	var sform = document.forms["signupform"]
+         
+         	sform.style.display="none";
+         	lform.style.display="block";
+         }
+      </script>
+   </body>
 </html>
